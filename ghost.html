@@ -10,12 +10,12 @@
       html {
         margin: 0;
         padding: 0;
-        height: 200%; /* Increased height for more scrollable space */
+        min-height: 100%;
+        height: 150%; /* Increased height for more scrollable space */
         overflow-x: hidden;
         background-color: #000; /* Dark background color for the page */
         color: #fff; /* White text to contrast with dark background */
         font-family: Arial, sans-serif;
-        overflow-x: hidden;
       }
 
       /* Dark overlay for the background */
@@ -54,7 +54,7 @@
         min-height: 100%;
         object-fit: cover;
         opacity: 0; /* Start with the video invisible */
-        transition: opacity 0.5s ease; /* Faster fade-in duration */
+        transition: opacity 0.3s ease-out; /* Smoother fade transition */
       }
 
       /* Content container */
@@ -119,74 +119,6 @@
         Scroll down to move forward in the video and scroll up to rewind. The
         video pauses when scrolling stops and does not repeat.
       </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id totam eum
-        placeat, laboriosam dolor blanditiis ipsa vitae eos quasi necessitatibus
-        dicta inventore fugiat, dolore dolores quia molestiae enim repudiandae
-        at. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate
-        enim consequatur, sed facere error quo molestias illum consectetur
-        deserunt! Dolor voluptates laudantium ratione perspiciatis ullam
-        temporibus atque voluptas similique cumque delectus esse quos, odit,
-        magni, repellendus quo? Molestiae, quos! Officiis mollitia ab animi
-        consequatur nihil tempora corporis? Quisquam corrupti odio enim,
-        accusamus nostrum error dolorem illum modi, aliquam id asperiores veniam
-        maxime corporis, blanditiis magnam. Commodi molestiae sint nesciunt, at
-        ratione id nam porro dolores, rem tempore cumque a quia harum tenetur,
-        et consequatur repudiandae iste pariatur omnis quas illum? Quasi
-        delectus est suscipit nobis autem sint veritatis corporis temporibus,
-        quaerat veniam architecto. Tenetur sapiente ratione facilis architecto
-        neque ad aperiam ex, nobis dolorem itaque rem odit et quasi maiores!
-      </p>
-    </div>
-    <div class="content">
-      <h1>Scroll to Control the Video</h1>
-      <p>
-        Scroll down to move forward in the video and scroll up to rewind. The
-        video pauses when scrolling stops and does not repeat.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id totam eum
-        placeat, laboriosam dolor blanditiis ipsa vitae eos quasi necessitatibus
-        dicta inventore fugiat, dolore dolores quia molestiae enim repudiandae
-        at. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate
-        enim consequatur, sed facere error quo molestias illum consectetur
-        deserunt! Dolor voluptates laudantium ratione perspiciatis ullam
-        temporibus atque voluptas similique cumque delectus esse quos, odit,
-        magni, repellendus quo? Molestiae, quos! Officiis mollitia ab animi
-        consequatur nihil tempora corporis? Quisquam corrupti odio enim,
-        accusamus nostrum error dolorem illum modi, aliquam id asperiores veniam
-        maxime corporis, blanditiis magnam. Commodi molestiae sint nesciunt, at
-        ratione id nam porro dolores, rem tempore cumque a quia harum tenetur,
-        et consequatur repudiandae iste pariatur omnis quas illum? Quasi
-        delectus est suscipit nobis autem sint veritatis corporis temporibus,
-        quaerat veniam architecto. Tenetur sapiente ratione facilis architecto
-        neque ad aperiam ex, nobis dolorem itaque rem odit et quasi maiores!
-      </p>
-    </div>
-    <div class="content">
-      <h1>Scroll to Control the Video</h1>
-      <p>
-        Scroll down to move forward in the video and scroll up to rewind. The
-        video pauses when scrolling stops and does not repeat.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id totam eum
-        placeat, laboriosam dolor blanditiis ipsa vitae eos quasi necessitatibus
-        dicta inventore fugiat, dolore dolores quia molestiae enim repudiandae
-        at. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate
-        enim consequatur, sed facere error quo molestias illum consectetur
-        deserunt! Dolor voluptates laudantium ratione perspiciatis ullam
-        temporibus atque voluptas similique cumque delectus esse quos, odit,
-        magni, repellendus quo? Molestiae, quos! Officiis mollitia ab animi
-        consequatur nihil tempora corporis? Quisquam corrupti odio enim,
-        accusamus nostrum error dolorem illum modi, aliquam id asperiores veniam
-        maxime corporis, blanditiis magnam. Commodi molestiae sint nesciunt, at
-        ratione id nam porro dolores, rem tempore cumque a quia harum tenetur,
-        et consequatur repudiandae iste pariatur omnis quas illum? Quasi
-        delectus est suscipit nobis autem sint veritatis corporis temporibus,
-        quaerat veniam architecto. Tenetur sapiente ratione facilis architecto
-        neque ad aperiam ex, nobis dolorem itaque rem odit et quasi maiores!
-      </p>
     </div>
 
     <script>
@@ -204,8 +136,8 @@
         const scrollPercentage = scrollY / maxScroll;
 
         // Define where the video section starts and ends
-        const videoSectionStart = 0.005; // Start fading in earlier (5% of scroll height)
-        const videoSectionEnd = 0.95; // Video reaches full opacity at 15% scroll height
+        const videoSectionStart = 0.05; // Start fading in earlier (5% of scroll height)
+        const videoSectionEnd = 0.95; // Video reaches full opacity at 20% scroll height
 
         // Fade-in effect: Make video visible as we scroll down
         if (
