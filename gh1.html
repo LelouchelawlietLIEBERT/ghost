@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll Fade In and Out</title>
+    <style>
+      body {
+        background-color: black;
+      }
+
+      img {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100vw;
+        opacity: 0;
+        z-index: -100;
+      }
+      div {
+        z-index: 1000;
+      }
+    </style>
+  </head>
+  <body>
+    <img id="fadeImage" src="image_0001.jpg" alt="Fading Image" />
+    <div style="width: 500px; color: white; margin-left: 25%; margin-top: 20%">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore tempora
+      earum, facere sequi, provident reiciendis aperiam nobis ipsum perspiciatis
+      ratione commodi. Corporis, eaque incidunt? Perferendis quae suscipit eos
+      ipsum tempora?
+    </div>
+    <div style="width: 500px; color: white; margin-left: 25%; margin-top: 20%">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore tempora
+      earum, facere sequi, provident reiciendis aperiam nobis ipsum perspiciatis
+      ratione commodi. Corporis, eaque incidunt? Perferendis quae suscipit eos
+      ipsum tempora?
+    </div>
+    <div style="width: 500px; color: white; margin-left: 25%; margin-top: 20%">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore tempora
+      earum, facere sequi, provident reiciendis aperiam nobis ipsum perspiciatis
+      ratione commodi. Corporis, eaque incidunt? Perferendis quae suscipit eos
+      ipsum tempora?
+    </div>
+    <div style="width: 500px; color: white; margin-left: 25%; margin-top: 20%">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore tempora
+      earum, facere sequi, provident reiciendis aperiam nobis ipsum perspiciatis
+      ratione commodi. Corporis, eaque incidunt? Perferendis quae suscipit eos
+      ipsum tempora?
+    </div>
+    <div style="width: 500px; color: white; margin-left: 25%; margin-top: 20%">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore tempora
+      earum, facere sequi, provident reiciendis aperiam nobis ipsum perspiciatis
+      ratione commodi. Corporis, eaque incidunt? Perferendis quae suscipit eos
+      ipsum tempora?
+    </div>
+    <div style="width: 500px; color: white; margin-left: 25%; margin-top: 20%">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore tempora
+      earum, facere sequi, provident reiciendis aperiam nobis ipsum perspiciatis
+      ratione commodi. Corporis, eaque incidunt? Perferendis quae suscipit eos
+      ipsum tempora?
+    </div>
+    <div style="width: 500px; color: white; margin-left: 25%; margin-top: 20%">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore tempora
+      earum, facere sequi, provident reiciendis aperiam nobis ipsum perspiciatis
+      ratione commodi. Corporis, eaque incidunt? Perferendis quae suscipit eos
+      ipsum tempora?
+    </div>
+    <div style="width: 500px; color: white; margin-left: 25%; margin-top: 20%">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore tempora
+      earum, facere sequi, provident reiciendis aperiam nobis ipsum perspiciatis
+      ratione commodi. Corporis, eaque incidunt? Perferendis quae suscipit eos
+      ipsum tempora?
+    </div>
+    <div style="width: 500px; color: white; margin-left: 25%; margin-top: 20%">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore tempora
+      earum, facere sequi, provident reiciendis aperiam nobis ipsum perspiciatis
+      ratione commodi. Corporis, eaque incidunt? Perferendis quae suscipit eos
+      ipsum tempora?
+    </div>
+    <div style="width: 500px; color: white; margin-left: 25%; margin-top: 20%">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore tempora
+      earum, facere sequi, provident reiciendis aperiam nobis ipsum perspiciatis
+      ratione commodi. Corporis, eaque incidunt? Perferendis quae suscipit eos
+      ipsum tempora?
+    </div>
+
+    <script>
+      window.addEventListener("scroll", function () {
+        var image = document.getElementById("fadeImage");
+        var scrollPosition = window.scrollY;
+        var maxScroll =
+          document.documentElement.scrollHeight - window.innerHeight;
+
+        // Adjusted halfway point and fade range for a longer scroll
+        var halfwayPoint = maxScroll / 1.5; // Later halfway point for longer fade range
+        var fadeRange = maxScroll / 4; // Longer fade range for slower fade effect
+
+        // Calculate opacity based on scroll position
+        var opacity = 0;
+
+        // Fade in
+        if (scrollPosition <= halfwayPoint) {
+          opacity = scrollPosition / halfwayPoint;
+        }
+        // Fade out after halfway point
+        else if (
+          scrollPosition > halfwayPoint &&
+          scrollPosition <= halfwayPoint + fadeRange
+        ) {
+          opacity = 1 - (scrollPosition - halfwayPoint) / fadeRange;
+        }
+
+        // Set the image opacity
+        image.style.opacity = opacity;
+      });
+    </script>
+  </body>
+</html>
