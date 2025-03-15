@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll-Controlled Video Background</title>
+    <style>
+      /* General Reset */
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 200%; /* Increased height for more scrollable space */
+        overflow-x: hidden;
+        background-color: #000; /* Dark background color for the page */
+        color: #fff; /* White text to contrast with dark background */
+        font-family: Arial, sans-serif;
+        overflow-x: hidden;
+      }
+
+      /* Dark overlay for the background */
+      #overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.7
+        ); /* Semi-transparent dark overlay */
+        z-index: -2;
+      }
+
+      /* Video container */
+      #video-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      /* Video styling */
+      video {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        min-width: 100%;
+        min-height: 100%;
+        object-fit: cover;
+        opacity: 0; /* Start with the video invisible */
+        transition: opacity 0.5s ease; /* Faster fade-in duration */
+      }
+
+      /* Content container */
+      .content {
+        position: relative;
+        z-index: 1;
+        padding: 20px;
+        text-align: center;
+        margin-top: 40vh; /* Start content a bit further down (at 120vh) */
+      }
+
+      /* Heading and text styling */
+      h1 {
+        font-size: 2.5em; /* Adjust font size for mobile */
+        margin: 20px;
+        font-weight: bold;
+      }
+
+      p {
+        font-size: 1.2em; /* Adjust font size for mobile */
+      }
+
+      /* Ensure proper scaling on smaller screens */
+      @media screen and (max-width: 600px) {
+        body,
+        html {
+          height: 300%; /* Adjusted for smaller screens */
+        }
+
+        .content {
+          margin-top: 100vh; /* Adjust content position for mobile */
+        }
+
+        h1 {
+          font-size: 2em; /* Reduce heading size for mobile */
+        }
+
+        p {
+          font-size: 1em; /* Adjust text size for mobile */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Dark Overlay -->
+    <div id="overlay"></div>
+
+    <!-- Video Container -->
+    <div id="video-container">
+      <video
+        id="video"
+        src="ezgif-729fc5d8af6333.mp4"
+        muted
+        preload="auto"
+      ></video>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+      <h1>Scroll to Control the Video</h1>
+      <p>
+        Scroll down to move forward in the video and scroll up to rewind. The
+        video pauses when scrolling stops and does not repeat.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id totam eum
+        placeat, laboriosam dolor blanditiis ipsa vitae eos quasi necessitatibus
+        dicta inventore fugiat, dolore dolores quia molestiae enim repudiandae
+        at. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate
+        enim consequatur, sed facere error quo molestias illum consectetur
+        deserunt! Dolor voluptates laudantium ratione perspiciatis ullam
+        temporibus atque voluptas similique cumque delectus esse quos, odit,
+        magni, repellendus quo? Molestiae, quos! Officiis mollitia ab animi
+        consequatur nihil tempora corporis? Quisquam corrupti odio enim,
+        accusamus nostrum error dolorem illum modi, aliquam id asperiores veniam
+        maxime corporis, blanditiis magnam. Commodi molestiae sint nesciunt, at
+        ratione id nam porro dolores, rem tempore cumque a quia harum tenetur,
+        et consequatur repudiandae iste pariatur omnis quas illum? Quasi
+        delectus est suscipit nobis autem sint veritatis corporis temporibus,
+        quaerat veniam architecto. Tenetur sapiente ratione facilis architecto
+        neque ad aperiam ex, nobis dolorem itaque rem odit et quasi maiores!
+      </p>
+    </div>
+    <div class="content">
+      <h1>Scroll to Control the Video</h1>
+      <p>
+        Scroll down to move forward in the video and scroll up to rewind. The
+        video pauses when scrolling stops and does not repeat.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id totam eum
+        placeat, laboriosam dolor blanditiis ipsa vitae eos quasi necessitatibus
+        dicta inventore fugiat, dolore dolores quia molestiae enim repudiandae
+        at. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate
+        enim consequatur, sed facere error quo molestias illum consectetur
+        deserunt! Dolor voluptates laudantium ratione perspiciatis ullam
+        temporibus atque voluptas similique cumque delectus esse quos, odit,
+        magni, repellendus quo? Molestiae, quos! Officiis mollitia ab animi
+        consequatur nihil tempora corporis? Quisquam corrupti odio enim,
+        accusamus nostrum error dolorem illum modi, aliquam id asperiores veniam
+        maxime corporis, blanditiis magnam. Commodi molestiae sint nesciunt, at
+        ratione id nam porro dolores, rem tempore cumque a quia harum tenetur,
+        et consequatur repudiandae iste pariatur omnis quas illum? Quasi
+        delectus est suscipit nobis autem sint veritatis corporis temporibus,
+        quaerat veniam architecto. Tenetur sapiente ratione facilis architecto
+        neque ad aperiam ex, nobis dolorem itaque rem odit et quasi maiores!
+      </p>
+    </div>
+    <div class="content">
+      <h1>Scroll to Control the Video</h1>
+      <p>
+        Scroll down to move forward in the video and scroll up to rewind. The
+        video pauses when scrolling stops and does not repeat.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id totam eum
+        placeat, laboriosam dolor blanditiis ipsa vitae eos quasi necessitatibus
+        dicta inventore fugiat, dolore dolores quia molestiae enim repudiandae
+        at. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate
+        enim consequatur, sed facere error quo molestias illum consectetur
+        deserunt! Dolor voluptates laudantium ratione perspiciatis ullam
+        temporibus atque voluptas similique cumque delectus esse quos, odit,
+        magni, repellendus quo? Molestiae, quos! Officiis mollitia ab animi
+        consequatur nihil tempora corporis? Quisquam corrupti odio enim,
+        accusamus nostrum error dolorem illum modi, aliquam id asperiores veniam
+        maxime corporis, blanditiis magnam. Commodi molestiae sint nesciunt, at
+        ratione id nam porro dolores, rem tempore cumque a quia harum tenetur,
+        et consequatur repudiandae iste pariatur omnis quas illum? Quasi
+        delectus est suscipit nobis autem sint veritatis corporis temporibus,
+        quaerat veniam architecto. Tenetur sapiente ratione facilis architecto
+        neque ad aperiam ex, nobis dolorem itaque rem odit et quasi maiores!
+      </p>
+    </div>
+
+    <script>
+      const video = document.getElementById("video");
+      let videoPlayed = false;
+      let isScrolling;
+
+      video.pause();
+
+      // Event listener for scroll
+      window.addEventListener("scroll", () => {
+        const scrollY = window.scrollY;
+        const maxScroll =
+          document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercentage = scrollY / maxScroll;
+
+        // Define where the video section starts and ends
+        const videoSectionStart = 0.005; // Start fading in earlier (5% of scroll height)
+        const videoSectionEnd = 0.95; // Video reaches full opacity at 15% scroll height
+
+        // Fade-in effect: Make video visible as we scroll down
+        if (
+          scrollY >= maxScroll * videoSectionStart &&
+          scrollY <= maxScroll * videoSectionEnd
+        ) {
+          const fadeInProgress =
+            (scrollY - maxScroll * videoSectionStart) /
+            (maxScroll * (videoSectionEnd - videoSectionStart));
+          video.style.opacity = fadeInProgress; // Fade in from 0 to 1
+        } else if (scrollY < maxScroll * videoSectionStart) {
+          video.style.opacity = 0; // Video is invisible before reaching the start of its section
+        } else {
+          video.style.opacity = 1; // Video is fully visible after reaching full opacity
+        }
+
+        // Control the video time based on scroll position
+        if (
+          scrollY >= maxScroll * videoSectionStart &&
+          scrollY <= maxScroll * videoSectionEnd
+        ) {
+          if (!videoPlayed) {
+            video.play();
+            videoPlayed = true;
+          }
+          video.currentTime = video.duration * scrollPercentage;
+        }
+
+        // Fade-out effect: Video starts to fade out immediately towards the end of the scroll
+        if (scrollY > maxScroll * videoSectionEnd) {
+          const fadeOutProgress =
+            (scrollY - maxScroll * videoSectionEnd) /
+            (maxScroll * (1 - videoSectionEnd));
+          video.style.opacity = 1 - fadeOutProgress; // Fade out from 1 to 0
+        }
+
+        // Stop the video when scrolling stops (debounce)
+        clearTimeout(isScrolling);
+        isScrolling = setTimeout(() => {
+          video.pause();
+        }, 66);
+
+        // Pause video if we reach the end
+        if (video.currentTime >= video.duration) {
+          video.pause();
+        }
+      });
+    </script>
+  </body>
+</html>
